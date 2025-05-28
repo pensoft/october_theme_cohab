@@ -1,0 +1,220 @@
+
+
+.work_packages h2.underline{
+    display: none;
+}
+
+
+.ui-icon {
+    &.small, &.large, &.huge {
+        .line-height;
+        vertical-align: middle;
+    }
+    &.small {
+        .font-size(0.80);
+    }
+    &.normal {
+        font-size: 20px;
+        float: left;
+        margin-right: 5px;
+        height: 20px;
+    }
+    &.big {
+        .font-size(2);
+    }
+    &.large {
+        .font-size(3);
+    }
+    &.huge {
+        .font-size(5);
+    }
+}
+
+.file_container{
+    padding: 10px;
+    line-height: 20px;
+    border-bottom: 1px solid #d8d8d8!important;
+}
+
+
+.work_packages, .resources{
+    list-style-type: none;
+    padding: 0;
+    margin: 0 auto 50px auto;
+}
+
+.work_packages .accordion-border, .resources .accordion-border{
+    border: none;
+    padding: 0px;
+    margin: 10px 0;
+    font-size: 1em;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 10px;
+    background: @secondary-color;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.work_packages .accordion-toggle, .resources .accordion-toggle{
+    background: none;
+    border: none;
+    border-radius: unset;
+    color: #416D72;
+    font-size: 18px;
+    line-height: 1.2em;
+    font-weight: 600;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    min-height: 80px;
+    .breakpoint-large-down({
+        width: 100%;
+        padding: 0px;
+    });
+    .col-xs.start-xs{
+        .breakpoint-large-down({
+            padding: 10px;
+        });
+    }
+    &:focus{
+        outline: none;
+    }
+
+    .green_bullet{
+        height: 80px;
+        width: 100%;
+        border-radius: 10px 0 0 10px;
+        margin-right: 20px;
+    }
+
+
+}
+.work_packages .accordion-content, .resources .accordion-content{
+    padding: 30px 30px 20px 30px;
+    line-height: 1.5em!important;
+    font-weight: 400;
+    font-size: 0.8em;
+    ol{
+        list-style-type: decimal;
+        padding-left: 40px;
+    }
+    ul{
+        padding-left: 20px!important;
+    }
+}
+
+
+.work_packages .accordion-content p, .resources .accordion-content p{
+    .breakpoint-large-down({
+        padding: 0!important;
+        text-align: left!important;
+        color: @dark-color;
+    });
+}
+
+
+.work_packages .col-md-6:nth-of-type(1){
+    .green_bullet{
+        background: @button-background-color url("../../assets/images/partnership.svg") center no-repeat;
+        background-size: 80%;
+    }
+}
+
+.work_packages .col-md-6:nth-of-type(2){
+    .green_bullet{
+        background: @button-background-color url("../../assets/images/international-policy.svg") center no-repeat;
+        background-size: 60%;
+    }
+}
+
+.work_packages .col-md-6:nth-of-type(3){
+    .green_bullet{
+        background: @button-background-color url("../../assets/images/national-and-regional-policy.svg") center no-repeat;
+        background-size: 60%;
+    }
+}
+
+.work_packages .col-md-6:nth-of-type(4){
+    .green_bullet{
+        background: @button-background-color url("../../assets/images/local-knowledge.svg") center no-repeat;
+        background-size: 50%;
+    }
+}
+
+.work_packages .col-md-6:nth-of-type(5){
+    .green_bullet{
+        background: @button-background-color url("../../assets/images/research.svg") center no-repeat;
+        background-size: 60%;
+    }
+}
+
+.work_packages .col-md-6:nth-of-type(6){
+    .green_bullet{
+        background: @button-background-color url("../../assets/images/education.svg") center no-repeat;
+        background-size: 50%;
+    }
+}
+
+.work_packages .plusminus, .resources .plusminus{
+    max-width: 30px;
+    height: 30px;
+    text-align: right;
+    vertical-align: middle;
+    color: @link-text-color;
+    font-size: 1em;
+    line-height: 30px;
+    margin: 0 20px;
+    border: 2px solid @link-text-color;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .plus, .minus{
+        color: @link-text-color;
+        font-size: 20px;
+        font-weight: normal;
+    }
+
+    .plus::before{
+        content: '\002B';
+    }
+    .minus::before{
+        content: '\2212';
+    }
+}
+
+
+
+.resources .col-md-6:nth-of-type(1){
+    .green_bullet{
+        background: @button-background-color url("../../assets/images/policy.svg") center no-repeat;
+        background-size: 50%;
+    }
+}
+
+.resources .col-md-6:nth-of-type(2){
+    .green_bullet{
+        background: @button-background-color url("../../assets/images/organisations-and-initiatives.svg") center no-repeat;
+        background-size: 50%;
+    }
+}
+
+.resources .col-md-6:nth-of-type(3){
+    .green_bullet{
+        background: @button-background-color url("../../assets/images/key-reports-and-publications.svg") center no-repeat;
+        background-size: 50%;
+    }
+}
+
+.resources .col-md-6:nth-of-type(4){
+    .green_bullet{
+        background: @button-background-color url("../../assets/images/seminal-reports-scientific-literature.svg") center no-repeat;
+        background-size: 50%;
+    }
+}
+
+

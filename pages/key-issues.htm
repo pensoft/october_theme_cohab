@@ -1,0 +1,82 @@
+title = "Key issues"
+layout = "default"
+url = "/key-issues/:id?|[a-zA-Z\-0-9]"
+header_image = "key-issues.jpg"
+
+[siteSearchInclude]
+
+
+==
+
+<?php
+use Pensoft\Keyissues\Models\Data as Issues;
+
+function onStart(){
+    $this['issues'] = Issues::get();
+    $this['issue'] = Issues::where('slug', $this->param('id'))->first();
+    if($this['issue']){
+        $this['is_detail_page'] = $this['issue'] ? true : false;
+    }
+}
+?>
+==
+
+{% component 'siteSearchInclude' %}
+
+<div class="container">
+
+
+{% if is_detail_page %}
+<div class="row single-issue-item">
+
+    <div class="go_back mt-2 mb-2">
+        <a href="/key-issues">Back</a>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12 issue-title">
+            <h1 class="single-issue-title">{{issue.title}}</h1>
+        </div>
+        <div class="col-md-4 col-xs-12 issue-images">
+            {% if issue.cover %}
+            <img src="{{ issue.cover|crop_image|resize(340, auto, { mode: 'crop' }) }}" />
+            {% endif %}
+            {% if issue.images %}
+                {% for img in issue.images %}
+                    <img src="{{ img|crop_image|resize(340, auto, { mode: 'crop' }) }}" />
+                {% endfor %}
+            {% endif %}
+        </div>
+        <div class="col-md-8 col-xs-12">
+            <div class="content">
+                {{issue.description|raw}}
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% else %}
+
+    {% if issues.count %}
+
+        <div class="issues-list">
+            <div class="row">
+                {% for issue in issues %}
+                <div class="col-md col-xs-12">
+                    <a class="issue-item" href="/key-issues/{{issue.slug}}">
+                        <div class="issue-title">{{ issue.title|length > 80 ? issue.title|slice(0, 80)|replace({"&nbsp;": " ", ".": ". "}) ~ '...' : issue.title|replace({"&nbsp;": " ", ".": ". "})  }}</div>
+                        <img src="{{ issue.cover.thumb(198, 105, {'mode': 'crop'})}}" alt="{{ highlight.title }}">
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+
+    {% endif %}
+
+
+{% endif %}
+
+</div>

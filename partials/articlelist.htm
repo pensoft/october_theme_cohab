@@ -1,0 +1,24 @@
+{% for record in records %}
+<div class="row">
+    <div class="col-md-2 col-xs-12 start-md center-xs">
+        <a href="{{'news'|page}}/{{record.slug}}">
+            <img src="{{ record.cover.thumb(135, 171, {'mode': 'crop'})}}" alt="{{ record.title }}">
+        </a>
+    </div>
+    <div class="col-md-10 col-xs-12">
+        <div class="news-list-content">
+            <div class="news-date">
+                {{ record.published_at|date('d F Y')|upper }}
+            </div>
+            <div class="news-title">
+                {{ record.title|length > 200 ? record.title|striptags|slice(0, 200)|replace({"&nbsp;": " ", ".": ". "}) ~ '...' : record.title|striptags|replace({"&nbsp;": " ", ".": ". "})  }}
+            </div>
+            <div class="news-description">
+            {{ record.content|length > 200 ? record.content|striptags|slice(0, 200)|replace({"&nbsp;": " ", ".": ". "}) ~ '...' : record.content|striptags|replace({"&nbsp;": " ", ".": ". "})  }}
+            </div>
+        </div>
+        <a href="{{'news'|page}}/{{record.slug}}" class="read_more">Read more</a>
+    </div>
+</div>
+{% endfor %}
+

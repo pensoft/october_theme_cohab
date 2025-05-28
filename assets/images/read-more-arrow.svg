@@ -1,0 +1,7 @@
+<svg id="arrow_forward" data-name="arrow forward" xmlns="http://www.w3.org/2000/svg" width="19.006" height="19.006" viewBox="0 0 19.006 19.006">
+  <g id="Group_152" data-name="Group 152" transform="translate(0 19.006) rotate(-90)" opacity="0">
+    <path id="Path_59" data-name="Path 59" d="M0,0H19.006V19.006H0Z" fill="#00a69d"/>
+  </g>
+  <path id="Path_60" data-name="Path 60" d="M8.792,16.335h9.392l-2.875,3.453a.793.793,0,1,0,1.22,1.014l3.96-4.751a.943.943,0,0,0,.071-.119c0-.04.04-.063.055-.1a.777.777,0,0,0,.055-.285h0a.777.777,0,0,0-.055-.285c0-.04-.04-.063-.055-.1a.943.943,0,0,0-.071-.119l-3.96-4.751a.8.8,0,0,0-1.4.436.806.806,0,0,0,.182.578l2.875,3.453H8.792a.792.792,0,1,0,0,1.584Z" transform="translate(-4.832 -6.04)" fill="#00a69d"/>
+  <path id="Path_61" data-name="Path 61" d="M0,0H19.006V19.006H0Z" fill="none"/>
+</svg>

@@ -1,0 +1,70 @@
+url = "/partnership"
+layout = "default"
+title = "Partnership"
+header_image = "partnership.jpg"
+
+[siteSearchInclude]
+
+[jumbotron partnership1]
+jumbotron = "partnership-1"
+background = "transperant"
+templates = "template3"
+description_limit = 0
+
+[jumbotron partnership2]
+jumbotron = "partnership-2"
+background = "transperant"
+templates = "template3"
+description_limit = 0
+
+[jumbotron partnership3]
+jumbotron = "partnership-3"
+background = "transperant"
+templates = "template3"
+description_limit = 0
+
+[jumbotron join]
+jumbotron = "join-cohab-initiative"
+title = 1
+background = "transperant"
+templates = "template3"
+description_limit = 0
+==
+{% component 'siteSearchInclude' %}
+
+
+<div class="container partnership1">
+    <div class="row">
+        <div class="col-md-4 col-xs-12">
+            <h2>Partnership is at the heart of Cohab’s mission.</h2>
+        </div>
+        <div class="col-md-8 col-xs-12">{% component "partnership1" %}</div>
+    </div>
+</div>
+
+
+<div class="container-fluid partnership2">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-xs-12">{% component "partnership2" %}</div>
+            <div class="col-md-6 col-xs-12"></div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid partnership3">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-xs-12"></div>
+            <div class="col-md-6 col-xs-12">{% component "partnership3" %}</div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid bg-secondary">
+    <div class="container objectives_container">
+        <div class="row">
+            <div class="col-md-12 col-xs-12">{% component "join" %}</div>
+        </div>
+    </div>
+</div>

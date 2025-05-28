@@ -1,0 +1,34 @@
+url = "/strategy"
+layout = "default"
+title = "Strategy"
+header_image = "strategy.jpg"
+
+[siteSearchInclude]
+
+[jumbotron plan]
+jumbotron = "strategic-plan"
+background = "transperant"
+templates = "template3"
+description_limit = 0
+
+[jumbotron strategy_table]
+jumbotron = "strategic-goals-table"
+background = "transperant"
+templates = "template3"
+description_limit = 0
+==
+{% component 'siteSearchInclude' %}
+
+<div class="container strategy_container">
+    <div class="row">
+        <div class="col-md-4 col-xs-12">
+            <h2>Strategic plan</h2>
+        </div>
+        <div class="col-md-8 col-xs-12">{% component "plan" %}</div>
+    </div>
+</div>
+<div class="container strategy_table">
+    <div class="row">
+        <div class="col-md-12 col-xs-12">{% component "strategy_table" %}</div>
+    </div>
+</div>

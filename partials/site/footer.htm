@@ -1,0 +1,76 @@
+[menu footer_menu]
+start = "id-3"
+activeNode = 0
+listItemClasses = "item"
+primaryClasses = "nav nav-pills"
+secondaryClasses = "dropdown-menu"
+numberOfLevels = 2
+
+[jumbotron funding]
+jumbotron = "funding"
+background = "transperant"
+templates = "template3"
+description_limit = 0
+==
+<div class="container-fluid border-box dark-background" {% if this.page.id != 'partnership' %} style="margin-top: 200px;" {% endif %}>
+    <div class="container">
+        <a class="donate_item_container" href="https://www.paypal.com/ncp/payment/N4MVUPHJFDMK6" target="_blank">
+            <div class="donate_item">
+                <span class="support">Support Cohab</span>
+                <span class="donate">DONATE</span>
+            </div>
+        </a>
+
+        <div class="row">
+            <div class="col-md-8 col-xs-12 start-md center-xs">
+                <img class="project_footer_logo" src="{{'cohab-logo-full-white.svg'|media}}">
+            </div>
+            <div class="col-md-4 col-xs-12 end-md center-xs social-networks">
+                <div class="row between-md social-links">
+                    {% if this.theme.twitter %}
+                    <a href="{{this.theme.twitter_url}}" target="_blank" class="btn pr p-secondary p-twitter"></a>
+                    {% endif %}
+                    {% if this.theme.facebook %}
+                    <a href="{{this.theme.facebook_url}}" target="_blank" class="btn pr p-secondary p-facebook"></a>
+                    {% endif %}
+                    {% if this.theme.linkedin %}
+                    <a href="{{this.theme.linkedin_url}}" target="_blank" class="btn pr p-secondary p-linkedin"></a>
+                    {% endif %}
+                    {% if this.theme.youtube %}
+                    <a href="{{this.theme.youtube_url}}" target="_blank" class="btn pr p-secondary p-youtube"></a>
+                    {% endif %}
+                    {% if this.theme.instagram %}
+                    <a href="{{this.theme.instagram_url}}" target="_blank" class="btn pr p-secondary p-instagram"></a>
+                    {% endif %}
+                    {% if this.theme.researchgate %}
+                    <a href="{{this.theme.researchgate_url}}" target="_blank" class="btn pr p-secondary p-researchgate"></a>
+                    {% endif %}
+                    {% if this.theme.bluesky %}
+                    <a href="{{this.theme.bluesky_url}}" target="_blank" class="btn pr p-secondary p-bluesky"></a>
+                    {% endif %}
+                    <a href="{{this.theme.threads_url}}" target="_blank" class="btn pr p-secondary p-whatsapp"></a>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 col-xs-12 start-md center-xs">
+                {% component 'footer_menu' %}
+            </div>
+        </div>
+        <div class="row disclaimer">
+            <div class="col-md-4 col-xs-12 all_rights">
+                © Cohab Initiative {{ 'now' | date('Y') }}. All rights reserved.
+            </div>
+            <div class="col-md-4 col-xs-12 center-md center-xs">
+                <a href="{{'privacy-policy'|page}}">Privacy policy</a>
+            </div>
+            <div class="col-md-4 col-xs-12 end-md center-xs powered-by">
+                <span>Designed and powered by <a href="https://pensoft.net/" target="_blank">
+                    <img class="pensoft_logo" src="{{ 'assets/images/pensoft-logo-white.svg'|theme }}" /></a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>

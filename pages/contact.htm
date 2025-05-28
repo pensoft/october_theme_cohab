@@ -1,0 +1,48 @@
+url = "/contact"
+layout = "default"
+title = "Contact"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+header_image = "contact.jpg"
+
+[siteSearchInclude]
+
+[jumbotron contact]
+jumbotron = "contact"
+background = "transperant"
+templates = "template3"
+description_limit = 0
+==
+
+{% component 'siteSearchInclude' %}
+{% component 'contact' %}
+
+<div class="container contacts_social_media">
+    Connect with us on social media
+    <div class="row between-md social-links">
+        {% if this.theme.twitter %}
+        <a href="{{this.theme.twitter_url}}" target="_blank" class="btn pr p-secondary p-twitter"></a>
+        {% endif %}
+        {% if this.theme.facebook %}
+        <a href="{{this.theme.facebook_url}}" target="_blank" class="btn pr p-secondary p-facebook"></a>
+        {% endif %}
+        {% if this.theme.linkedin %}
+        <a href="{{this.theme.linkedin_url}}" target="_blank" class="btn pr p-secondary p-linkedin"></a>
+        {% endif %}
+        {% if this.theme.youtube %}
+        <a href="{{this.theme.youtube_url}}" target="_blank" class="btn pr p-secondary p-youtube"></a>
+        {% endif %}
+        {% if this.theme.instagram %}
+        <a href="{{this.theme.instagram_url}}" target="_blank" class="btn pr p-secondary p-instagram"></a>
+        {% endif %}
+        {% if this.theme.researchgate %}
+        <a href="{{this.theme.researchgate_url}}" target="_blank" class="btn pr p-secondary p-researchgate"></a>
+        {% endif %}
+        {% if this.theme.bluesky %}
+        <a href="{{this.theme.bluesky_url}}" target="_blank" class="btn pr p-secondary p-bluesky"></a>
+        {% endif %}
+        <a href="{{this.theme.threads_url}}" target="_blank" class="btn pr p-secondary p-whatsapp"></a>
+
+    </div>
+</div>

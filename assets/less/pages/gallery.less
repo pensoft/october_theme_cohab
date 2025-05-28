@@ -1,0 +1,178 @@
+.gallery-title{
+    display: none;
+    color: @dark-color;
+    font-size: 36px;
+}
+
+.gallery-item {
+    img{
+        width: 743px;
+        height: 436px;
+        max-width: 100%;
+        border-radius: 10px;
+        object-fit: cover;
+    }
+
+    .col-md-10 {
+        flex-basis: 100%;
+        max-width: 100%;
+        padding: 0;
+    }
+}
+
+/* Position the image container (needed to position the left and right arrows) */
+.gallery_container {
+    position: relative;
+    .row:has(.column){
+        display: none;
+    }
+    &:before{
+        background: linear-gradient(90deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
+        width: 100px;
+        max-width: 20%;
+        height: 436px;
+        content: ' ';
+        position: absolute;
+        left: 0;
+        top: 0;
+        border-bottom-left-radius: 10px;
+        border-top-left-radius: 10px;
+        z-index: 2;
+    }
+    &:after{
+        background: linear-gradient(270deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
+        width: 100px;
+        max-width: 20%;
+        height: 436px;
+        content: ' ';
+        position: absolute;
+        right: 0;
+        top: 0;
+        border-bottom-right-radius: 10px;
+        border-top-right-radius: 10px;
+        z-index: 2;
+    }
+
+
+
+}
+
+/* Hide the images by default */
+.mySlides {
+    display: none;
+    text-align: center;
+}
+//
+//.img-fluid {
+//    height: 400px !important;
+//    .breakpoint-small-down({
+//        height: 280px !important;
+//    });
+//}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+    cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    width: 100px;
+    height: 436px;
+    top: 0;
+    background-color: transparent;
+    border-radius: 50%;
+    user-select: none;
+    -webkit-user-select: none;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 5;
+
+    .breakpoint-small-down({
+        width: 48px;
+        height: 48px;
+    });
+}
+
+.next {
+    right: 0px;
+    background-image: url('../../assets/images/gallery_arrow_right.svg');
+    background-size: 24px;
+    background-position: right 23px center;
+
+    //.breakpoint-small-down({
+    //    right: -15px;
+    //});
+}
+
+.prev {
+    left: 0px;
+    background-image: url('../../assets/images/gallery_arrow_left.svg');
+    background-size: 24px;
+    background-position: left 23px center;
+    //.breakpoint-small-down({
+    //    left: -15px;
+    //});
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+    opacity: 0.65
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+/* Container for image text */
+.caption-container {
+    text-align: center;
+    // background-color: #222;
+    padding: 0px 16px;
+    color: white;
+    #caption{
+        margin-bottom: 0!important;
+    }
+}
+
+
+/* Six columns side by side */
+.column {
+    // float: right;
+    width: 120px;
+    padding-bottom: 16px;
+    .breakpoint-small-down({
+        width: 76px;
+    });
+    img{
+        border-radius: 0!important;
+        height: 96px;
+        .breakpoint-small-down({
+            height: 69px;
+        });
+    }
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+    opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+    opacity: 1;
+}
+
+.download-gallery{
+    display: none;
+    padding-bottom: 24px;
+}

@@ -1,0 +1,16 @@
+<svg id="Group_347" data-name="Group 347" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="49.472" height="49.437" viewBox="0 0 49.472 49.437">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_268" data-name="Rectangle 268" width="49.472" height="49.437" fill="none" stroke="#fff" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="Group_346" data-name="Group 346" clip-path="url(#clip-path)">
+    <path id="Path_175" data-name="Path 175" d="M97.8,14.234V6H76.477" transform="translate(-66.547 -5.221)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <path id="Path_176" data-name="Path 176" d="M6,76.477v33.106H36.47v-2.274" transform="translate(-5.221 -66.548)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <line id="Line_3" data-name="Line 3" x1="9.15" y2="9.15" transform="translate(0.779 0.779)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <path id="Path_177" data-name="Path 177" d="M6,15.151h9.15V6" transform="translate(-5.221 -5.221)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <path id="Path_178" data-name="Path 178" d="M103.993,84.381q-.253-.282-.524-.554a13.686,13.686,0,1,0,3.156,4.91M103.7,91.906a10.042,10.042,0,1,1-2.812-5.494,10.145,10.145,0,0,1,.689.763" transform="translate(-69.69 -69.453)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <path id="Path_179" data-name="Path 179" d="M244.786,239.875,256.7,251.788a3.281,3.281,0,0,1-4.64,4.64l-11.913-11.913" transform="translate(-208.966 -208.731)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <path id="Path_180" data-name="Path 180" d="M136.392,118.759l5.409,5.409,15.338-15.338" transform="translate(-118.683 -94.7)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+  </g>
+</svg>
