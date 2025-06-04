@@ -25,11 +25,20 @@
     box-sizing: border-box;
     padding: 10px 20px 10px 20px;
     background: white;
+    transition: transform 0.3s ease-in-out;
 
     &.fixed {
         position: fixed;
         top: 0;
         z-index: @zindex-fixed;
+    }
+
+    &.scrolled {
+        transform: translateY(-100%);
+
+        .navbar-nav-sub{
+            transform: translateY(-100%);
+        }
     }
 
     .navbar-brand {
@@ -196,6 +205,7 @@
             z-index: @zindex-dropdown;
             font-size: 16px;
             color: @white-color!important;
+            transition: transform 0.3s ease-in-out;
 
             .breakpoint-large-down({
                 display: none;
