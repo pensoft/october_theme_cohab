@@ -20,6 +20,7 @@ no_records_message = "No records found"
 <?php
 use Pensoft\Articles\Models\Category;
 use Pensoft\Articles\Models\Article;
+use Carbon\Carbon;
 
 function urlencode($string){
     return trim(urlencode($string));
@@ -40,14 +41,14 @@ return redirect('news');
 $this['categoryId'] = $categoryId;
 
 if ($categoryId === 'all') {
-$records = Article::news()->where('published_at', '<=', 'now')
+$records = Article::news()->whereDate('published_at', '<=', Carbon::today()->toDateString())
 ->where('published', 'true')
 ->orderBy('published_at', 'DESC')
 ->paginate(15);
 } else {
 $records = Article::news()->whereHas('categories', function ($query) use ($categoryId) {
 $query->where('id', $categoryId);
-})->where('published_at', '<=', 'now')
+})->whereDate('published_at', '<=', Carbon::today()->toDateString())
 ->where('published', 'true')
 ->orderBy('published_at', 'DESC')
 ->paginate(15);
