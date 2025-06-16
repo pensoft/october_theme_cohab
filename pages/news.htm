@@ -18,14 +18,17 @@ thumb_height = 250
 no_records_message = "No records found"
 ==
 <?php
-use Pensoft\Articles\Models\Article;
 use Pensoft\Articles\Models\Category;
+use Pensoft\Articles\Models\Article;
 
 function urlencode($string){
     return trim(urlencode($string));
 }
 function onStart()
 {
+
+$this['article'] = Pensoft\Articles\Models\Article::where('slug', $this->param('id'))->where('published', 'true')->first();
+
 $this['categories'] = Category::orderBy('sort_order')->orderBy('created_at', 'desc')->get();
 
 $categoryId = input('categoryId', 'all');
@@ -40,14 +43,14 @@ if ($categoryId === 'all') {
 $records = Article::news()->where('published_at', '<=', 'now')
 ->where('published', 'true')
 ->orderBy('published_at', 'DESC')
-->paginate(12);
+->paginate(15);
 } else {
 $records = Article::news()->whereHas('categories', function ($query) use ($categoryId) {
 $query->where('id', $categoryId);
 })->where('published_at', '<=', 'now')
 ->where('published', 'true')
 ->orderBy('published_at', 'DESC')
-->paginate(12);
+->paginate(15);
 }
 
 if ($categoryId !== 'all') {
@@ -56,8 +59,6 @@ $records->appends(['categoryId' => $categoryId]);
 
 $this['records'] = $records;
 
-
-$this['article'] = Pensoft\Articles\Models\Article::where('slug', $this->param('id'))->where('published', 'true')->first();
 if($this['article']){
 
 $this['is_detail_page'] = $this['article'] ? true : false;
@@ -121,7 +122,7 @@ $c++;
 $orWhere .= ')';
 $related = $related
 ->whereRaw($orWhere)
-->limit(2)
+->limit(1)
 ->get();
 
 $this['related'] = $related;
@@ -178,6 +179,18 @@ $this['related'] = $related;
 
 
     <div class="news-list">
+
+
+        <div class="category-tabs-container mb-2">
+            {% if categories.count > 0 %}
+            <div class="row category-tabs" id="category-tabs">
+                <a href="{{ 'news'|page }}" class="{{ 'all' == categoryId ? 'active' : '' }}">All News</a>
+                {% for category in categories %}
+                <a href="{{ 'news'|page }}?categoryId={{ category.id }}" class="{{ category.id == categoryId ? 'active' : '' }}">{{ category.name }}</a>
+                {% endfor %}
+            </div>
+            {% endif %}
+        </div>
 
         <div class="row" id="recordsContainer" style="width: 100%;">
             {% partial 'articlelist' records=records %}

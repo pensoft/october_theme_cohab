@@ -128,7 +128,7 @@ $this['slug'] = $this->param('slug');
                             <span class="date_month">{{entry.start|date("M")}}</span>
                             <span class="date_year">{{entry.start|date("Y")}}</span>
                         </div>
-                        <div class="col-md-9 col-xs-12 body_container">
+                        <div class="col-md-8 col-xs-12 body_container">
                             {% if entry.cover_image %}
                             <a href="{{url}}" target="_blank">
                                 <img src="{{entry.cover_image.getThumb(auto, auto, {'mode': 'crop'})}}">
@@ -139,8 +139,9 @@ $this['slug'] = $this->param('slug');
                             </a>
 
                         </div>
-                        <div class="col-md-2 col-xs-12 read-more-events center-md center-xs">
+                        <div class="col-md-3 col-xs-12 read-more-events center-md center-xs" style="flex-direction: column;">
                             <a href="{{url}}" target="_blank" class="read_more">Read more</a>
+                            <a href="https://calendar.google.com/calendar/r/eventedit?text={{entry.title|raw}}&dates={{entry.start|date('YmdTHms')}}/{{entry.end|date('YmdTHms')}}&details={{entry.description|raw}}&location={{entry.place}}" target="_blank" class="read_more">Add to calendar</a>
                         </div>
                     </div>
 
@@ -178,6 +179,9 @@ $this['slug'] = $this->param('slug');
         </div>
         <div class="content">
             {{entry.description|raw}}
+
+
+
         </div>
         <div class="row middle-xs">
             <div class="col-xs col-md start-md center-xs share_container">
@@ -185,6 +189,7 @@ $this['slug'] = $this->param('slug');
                 <a href="https://www.linkedin.com/sharing/share-offsite/?url={{page_url}}" target="_blank" class="pr p-linkedin normal"></a>
                 <a href="https://bsky.app/intent/compose?text={{page_url}}" class="pr p-bluesky small"  target="_blank"></a>
             </div>
+            <a href="https://calendar.google.com/calendar/r/eventedit?text={{entry.title|raw}}&dates={{entry.start|date('YmdTHms')}}/{{entry.end|date('YmdTHms')}}&details={{entry.description|raw}}&location={{entry.place}}" target="_blank" class="btn btn-primary" style="margin-top: 40px;">Add to calendar</a>
         </div>
     </div>
 </div>

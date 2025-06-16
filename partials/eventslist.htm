@@ -8,7 +8,7 @@
             <span class="date_month">{{entry.start|date("M")}}</span>
             <span class="date_year">{{entry.start|date("Y")}}</span>
         </div>
-        <div class="col-md-9 col-xs-12 body_container">
+        <div class="col-md-8 col-xs-12 body_container">
             {% if entry.cover_image %}
             <a href="{{url}}" target="_blank">
                 <img src="{{entry.cover_image.getThumb(auto, auto, {'mode': 'crop'})}}">
@@ -19,8 +19,9 @@
             </a>
 
         </div>
-        <div class="col-md-2 col-xs-12 read-more-events end-md center-xs">
+        <div class="col-md-3 col-xs-12 read-more-events end-md center-xs" style="flex-direction: column;">
             <a href="{{url}}" target="_blank" class="read_more">Read more</a>
+            <a href="https://calendar.google.com/calendar/r/eventedit?text={{entry.title|raw}}&dates={{entry.start|date('YmdTHms')}}/{{entry.end|date('YmdTHms')}}&details={{entry.description|raw}}&location={{entry.place}}" target="_blank" class="read_more">Add to calendar</a>
         </div>
     </div>
     {% endfor %}
