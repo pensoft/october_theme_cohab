@@ -9,7 +9,6 @@ var documentHasScroll = function() {
 window.addEventListener('scroll', function (e) {
     var headernavbar = document.getElementById("headernavbar");
     var headernavbarsub = document.getElementsByClassName("navbar-nav-sub");
-    console.log(headernavbarsub);
     if (window.scrollY > headernavbar.offsetHeight*4){
         var headerNavbarNav = document.querySelector('#headerNavbarNav')
         headernavbar.classList.add('scrolled');
