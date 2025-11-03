@@ -1,7 +1,6 @@
 
 <!--<div class="events_list_container">-->
     {% for entry in records %}
-    {% set url = entry.url ?  entry.url : '/events/' ~ entry.slug %}
     <div class="row entry_item middle-xs">
         <div class="col-md-1 col-xs-12 date_container">
             <span class="date_day">{{entry.start|date("j")}}</span>
@@ -10,17 +9,17 @@
         </div>
         <div class="col-md-8 col-xs-12 body_container">
             {% if entry.cover_image %}
-            <a href="{{url}}" target="_blank">
+            <a href="/events/{{entry.slug}}" target="_blank">
                 <img src="{{entry.cover_image.getThumb(auto, auto, {'mode': 'crop'})}}">
             </a>
             {% endif %}
-            <a href="{{url}}" target="_blank" class="date_week">
+            <a href="/events/{{entry.slug}}" target="_blank" class="date_week">
                 {{entry.title|raw}}
             </a>
 
         </div>
         <div class="col-md-3 col-xs-12 read-more-events end-md center-xs" style="flex-direction: column;">
-            <a href="{{url}}" target="_blank" class="read_more">Read more</a>
+            <a href="/events/{{entry.slug}}" target="_blank" class="read_more">Read more</a>
             <a href="https://calendar.google.com/calendar/r/eventedit?text={{entry.title|raw}}&dates={{entry.start|date('YmdTHms')}}/{{entry.end|date('YmdTHms')}}&details={{entry.description|raw}}&location={{entry.place}}" target="_blank" class="read_more">Add to calendar</a>
         </div>
     </div>
