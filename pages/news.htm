@@ -108,6 +108,8 @@ if($this['article']['slug']){
 $article = Article::where('slug', $this['article']['slug'])->first();
 $arrayOfTags = explode(",", $article->keywords);
 
+$this['og_image'] = $this['article']['cover']->getThumb(600, 314, ['mode' => 'crop']);
+
 $related = Article::where('slug', '!=', $this['article']['slug']);
 
 $orWhere = '( ';
