@@ -454,6 +454,7 @@
         .body_container{
             padding-left: 30px;
             display: flex;
+            align-items: center;
             .breakpoint-large-down({
                 flex-direction: column;
             });
@@ -527,7 +528,8 @@
             width: 196px;
             height: auto;
             max-height: 113px;
-            object-fit: cover;
+            object-fit: contain;
+            background: white;
             object-position: top;
             .breakpoint-large-down({
                 float: none;
