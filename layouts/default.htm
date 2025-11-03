@@ -22,8 +22,6 @@ escape = 1
     <link rel="icon" type="{{this.theme.site_icon.getContentType()}}" href="{{this.theme.site_icon.getPath()}}">
     {% endif %}
 
-
-
     <link href="{{ ['assets/less/theme.less']|theme }}" rel="stylesheet">
     <link href="{{ ['assets/css/scale.css']|theme }}" rel="stylesheet">
     <link href="{{ ['assets/css/light.css']|theme }}" rel="stylesheet">
@@ -43,8 +41,6 @@ escape = 1
     {% endif %}
 
 
-
-
 <!--    <script src="{{ 'assets/js/ckeditor/ckeditor.js'|theme}}"></script>-->
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -56,6 +52,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     {% if this.page.id == 'news' and is_detail_page %}
         {% component 'metaList' includePageMeta=false %}
+        <meta name="image" property="og:image" content="{{'news.jpg'|media}}">
     {% else %}
         {% component 'metaList' %}
     {% endif %}
