@@ -128,17 +128,17 @@ $this['slug'] = $this->param('slug');
                         </div>
                         <div class="col-md-8 col-xs-12 body_container">
                             {% if entry.cover_image %}
-                            <a href="/events/{{entry.slug}}" target="_blank">
+                            <a href="/events/{{entry.slug}}">
                                 <img src="{{entry.cover_image.getThumb(auto, auto, {'mode': 'crop'})}}">
                             </a>
                             {% endif %}
-                            <a href="/events/{{entry.slug}}" target="_blank" class="date_week">
+                            <a href="/events/{{entry.slug}}" class="date_week">
                                 {{entry.title|raw}}
                             </a>
 
                         </div>
                         <div class="col-md-3 col-xs-12 read-more-events center-md center-xs" style="flex-direction: column;">
-                            <a href="/events/{{entry.slug}}" target="_blank" class="read_more">Read more</a>
+                            <a href="/events/{{entry.slug}}" class="read_more">Read more</a>
                             <a href="https://calendar.google.com/calendar/r/eventedit?text={{entry.title|raw}}&dates={{entry.start|date('YmdTHms')}}/{{entry.end|date('YmdTHms')}}&details={{entry.description|raw}}&location={{entry.place}}" target="_blank" class="read_more">Add to calendar</a>
                         </div>
                     </div>
@@ -185,8 +185,12 @@ $this['slug'] = $this->param('slug');
         <div class="row middle-xs">
             <div class="col-xs col-md start-md center-xs share_container">
                 <span class="share_label">Share</span>
-                <a href="https://www.linkedin.com/sharing/share-offsite/?url={{page_url}}" target="_blank" class="pr p-linkedin normal"></a>
-                <a href="https://bsky.app/intent/compose?text={{page_url}}" class="pr p-bluesky small"  target="_blank"></a>
+                <a title="Share on LinkedIn" href="https://www.linkedin.com/sharing/share-offsite/?url={{page_url}}" target="_blank" class="pr p-linkedin normal"></a>
+                <a title="Share on BlueSky" href="https://bsky.app/intent/compose?text={{page_url}}" class="pr p-bluesky small"  target="_blank"></a>
+                <a title="Share on Facebook" href="https://www.facebook.com/sharer.php?u={{page_url}}" class="pr p-facebook small"  target="_blank"></a>
+                <a title="Share on Twitter (X)" href="https://twitter.com/intent/tweet?url={{page_url}}" class="pr p-twitter small"  target="_blank"></a>
+                <a title="Send via email" href="mailto:?subject={{entry.title}}&amp;body=Take%20a%20look%20at%20this%20website%3A%20{{page_url}}" class="pr p-mail small"  target="_blank"></a>
+                <a title="Copy link" onclick="copyToClipboard('{{page_url}}');" href="javascript: void(0);" class="pr p-copy small"  target="_blank"></a>
             </div>
             <a href="https://calendar.google.com/calendar/r/eventedit?text={{entry.title|raw}}&dates={{entry.start|date('YmdTHms')}}/{{entry.end|date('YmdTHms')}}&details={{entry.description|raw}}&location={{entry.place}}" target="_blank" class="btn btn-primary" style="margin-top: 40px;">Add to calendar</a>
         </div>

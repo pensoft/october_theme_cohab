@@ -683,8 +683,8 @@ nav:not(.navbar){
 
         &.slick-prev {
             position: absolute;
-            width: 41px;
-            height: 41px;
+            width: 35px;
+            height: 35px;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -695,6 +695,7 @@ nav:not(.navbar){
             //left: 55px;
             z-index: 1;
             background: url("../../assets/images/arrow-right.svg") center no-repeat;
+            background-size: contain;
 
             .breakpoint-large-down({
                 left: 20px;
@@ -707,17 +708,18 @@ nav:not(.navbar){
 
         &.slick-next {
             position: absolute;
-            width: 41px;
-            height: 41px;
+            width: 35px;
+            height: 35px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            top: 20px;
-            left: 25%;
+            top: 17px;
+            left: 25.5%;
             //left: 100px;
             z-index: 1;
             background: url("../../assets/images/arrow-right.svg") center no-repeat;
+            background-size: contain;
             .breakpoint-large-down({
                 left: 55px;
             });

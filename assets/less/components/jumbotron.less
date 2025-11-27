@@ -886,3 +886,34 @@
         }
     }
 }
+
+.key-issues{
+    .share_container{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: start;
+        padding: 0;
+        color: @heading-text-color;
+        font-weight: 500;
+        margin-top: 40px;
+        a{
+            width: 35px;
+            height: 35px;
+            color: white;
+            background: @link-color;
+            border-radius: 6px;
+            font-size: 1.3em!important;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 10px;
+            &:hover{
+                opacity: 0.5;
+            }
+            &.p-bluesky{
+                font-size: 0.8em!important;
+            }
+        }
+    }
+}
