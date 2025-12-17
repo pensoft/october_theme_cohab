@@ -89,7 +89,6 @@ $(document).ready(function() {
 
             var currLink = $(this);
             var refElement = currLink.attr("id");
-            console.log(currLink.offset().top,  scrollPos)
             if (currLink.offset().top <= scrollPos && currLink.offset().top + currLink.height() > scrollPos) {
                 window.history.replaceState(null, null, '#' + refElement);
             }

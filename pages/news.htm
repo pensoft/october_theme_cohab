@@ -146,6 +146,11 @@ $this['related'] = $related;
         <div class="col-xs-12">
             {% if article.cover %}
             <img src="{{ article.cover|crop_image|resize(743, auto, { mode: 'crop' }) }}" />
+                {% if article.cover.title or article.cover.description %}
+                <i class="image_caption"><b>{{article.cover.title}}</b>
+                    {{article.cover.description}}</i>
+                {% endif %}
+
             {% endif %}
             {% if article.caption %}
             <div class="caption">{{article.caption|raw}}</div>

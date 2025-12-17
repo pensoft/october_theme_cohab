@@ -29,7 +29,6 @@ function onStart(){
 
 {% if is_detail_page %}
 <div class="row single-issue-item">
-
     <div class="go_back mt-2 mb-2">
         <a href="/key-issues">Back</a>
     </div>
@@ -41,10 +40,19 @@ function onStart(){
         <div class="col-md-4 col-xs-12 issue-images">
             {% if issue.cover %}
             <img src="{{ issue.cover|crop_image|resize(340, auto, { mode: 'crop' }) }}" />
+
+                {% if issue.cover.title or issue.cover.description %}
+                <i class="image_caption"><b>{{issue.cover.title}}</b>
+                    {{issue.cover.description}}</i>
+                {% endif %}
             {% endif %}
             {% if issue.images %}
                 {% for img in issue.images %}
-                    <img src="{{ img|crop_image|resize(340, auto, { mode: 'crop' }) }}" />
+                    <img src="{{ img|crop_image|resize(340, auto, { mode: 'crop' }) }}" />{{img}}
+                    {% if img.title or img.description %}
+                        <i class="image_caption"><b>{{img.title}}</b>
+                            {{img.description}}</i>
+                    {% endif %}
                 {% endfor %}
             {% endif %}
         </div>
