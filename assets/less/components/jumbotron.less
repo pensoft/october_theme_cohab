@@ -917,3 +917,42 @@
         }
     }
 }
+
+.vision_section{
+    padding: 50px 0 50px 26%;
+    position: relative;
+    z-index: 2;
+    &:before{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 76%;
+        height: 100%;
+        content: '';
+        background: url("../../assets/images/visions_page.jpg") top left no-repeat;
+        background-size: cover;
+        border-radius: 10px;
+        z-index: 1;
+    }
+    ul{
+        position: relative;
+        z-index: 2;
+        /* UI Properties */
+        background: rgba(76, 100, 136, 0.9);
+        box-shadow: 0px 5px 34px #4C6488D6;
+        border-radius: 10px;
+        padding: 50px 26px;
+        margin: 0;
+
+        li{
+            background: url("../../assets/images/Independence.svg") top left no-repeat;
+            list-style-type: none;
+            padding: 0 0 0 60px;
+            margin: 0 0 35px 0;
+            font-family: Roboto;
+            font-size: 16px;
+            line-height: 26px;
+            color: white;
+        }
+    }
+}

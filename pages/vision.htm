@@ -1,0 +1,23 @@
+title = "Vision"
+layout = "default"
+url = "/vision"
+header_image = "vision.jpg"
+
+[siteSearchInclude]
+
+[jumbotron]
+jumbotron = "vision-page"
+title = 0
+background = "transperant"
+templates = "template3"
+description_limit = 0
+==
+{% component 'siteSearchInclude' %}
+
+<div class="container vision" id="vision">
+    <h1 class="display-1">The Cohab Initiative works towards a future:</h1>
+    <div class="vision_section">
+        {% component 'jumbotron' %}
+    </div>
+
+</div>
