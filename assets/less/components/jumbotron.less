@@ -922,6 +922,11 @@
     padding: 50px 0 50px 26%;
     position: relative;
     z-index: 2;
+
+    .breakpoint-large-down({
+        padding: 50px 0;
+    });
+
     &:before{
         position: absolute;
         top: 0;
@@ -933,6 +938,9 @@
         background-size: cover;
         border-radius: 10px;
         z-index: 1;
+        .breakpoint-large-down({
+            background-size: 100%;
+        });
     }
     ul{
         position: relative;
