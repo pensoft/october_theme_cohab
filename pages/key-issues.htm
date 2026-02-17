@@ -1,13 +1,10 @@
-title = "Key issues"
-layout = "default"
 url = "/key-issues/:id?|[a-zA-Z\-0-9]"
+layout = "default"
+title = "Key issues"
 header_image = "key-issues.jpg"
 
 [siteSearchInclude]
-
-
 ==
-
 <?php
 use Pensoft\Keyissues\Models\Data as Issues;
 
@@ -21,7 +18,6 @@ function onStart(){
 }
 ?>
 ==
-
 {% component 'siteSearchInclude' %}
 
 <div class="container">
@@ -48,7 +44,7 @@ function onStart(){
             {% endif %}
             {% if issue.images %}
                 {% for img in issue.images %}
-                    <img src="{{ img|crop_image|resize(340, auto, { mode: 'crop' }) }}" />{{img}}
+                    <img src="{{ img|crop_image|resize(340, auto, { mode: 'crop' }) }}" />
                     {% if img.title or img.description %}
                         <i class="image_caption"><b>{{img.title}}</b>
                             {{img.description}}</i>
