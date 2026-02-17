@@ -20,7 +20,7 @@
         </div>
         <div class="col-md-3 col-xs-12 read-more-events end-md center-xs" style="flex-direction: column;">
             <a href="/events/{{entry.slug}}" target="_blank" class="read_more">Read more</a>
-            <a href="https://calendar.google.com/calendar/r/eventedit?text={{entry.title|raw}}&dates={{entry.start|date('YmdTHms')}}/{{entry.end|date('YmdTHms')}}&details={{entry.description|raw}}&location={{entry.place}}" target="_blank" class="read_more">Add to calendar</a>
+            <a href="https://calendar.google.com/calendar/r/eventedit?text={{entry.title|raw}}&dates={{entry.start|date('YmdTHms')}}/{{entry.end|date('YmdTHms')}}&details={{entry.description|striptags}}&location={{entry.place}}" target="_blank" class="read_more">Add to calendar</a>
         </div>
     </div>
     {% endfor %}
