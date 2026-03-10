@@ -1,0 +1,68 @@
+url = "/venue"
+layout = "default"
+title = "Venue"
+conference = 1
+header_image = "conference_venue.png"
+
+[siteSearchInclude]
+
+[menu c_menu]
+start = "id-21"
+activeNode = 0
+listItemClasses = "item"
+primaryClasses = "nav nav-pills"
+secondaryClasses = "dropdown-menu"
+numberOfLevels = 1
+
+[jumbotron venue]
+jumbotron = "venue"
+title = 0
+background = "transperant"
+templates = "template3"
+description_limit = 0
+==
+{% component 'siteSearchInclude' %}
+
+<div class="container-fluid conference-menu-container">
+    <div class="container conference-menu" id="conference-menu">
+        {% component 'c_menu' %}
+    </div>
+</div>
+
+{% component 'venue' %}
+
+<div class="container">
+    <div class="row venue-info">
+        <div class="col-md-6 col-xs-12">
+            <div class="venue-item">
+                <div class="venue-item__header">
+                    <img src="{{ 'assets/images/icon_travel.svg' | theme }}" alt="" class="venue-item__icon">
+                    <h3>Travel and accommodation</h3>
+                </div>
+                <p>A travel guide with recommendations for travelling to Galway and details of local accommodation options and sites to visit will be circulated to all proposed participants upon receipt of official letters of nomination</p>
+                <a href="/registration" class="venue-item__link">See Registration page</a>
+            </div>
+        </div>
+        <div class="col-md-6 col-xs-12">
+            <div class="venue-item">
+                <div class="venue-item__header">
+                    <img src="{{ 'assets/images/icon_accessibility.svg' | theme }}" alt="" class="venue-item__icon">
+                    <h3>Accessibility</h3>
+                </div>
+                <p>The conference venue is and dinner venue are fully accessible for individuals with mobility issues. Ramps, elevators, appropriate seating and accessible are provided.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="venue-contact-banner">
+
+        <div class="venue-contact-banner__inner">
+            <p class="venue-contact-banner__text">If you have any specific concerns or requests, contact organisers</p>
+            <a href="/contact" class="venue-contact-banner__btn">
+                <img src="{{ 'assets/images/icon_mail.svg' | theme }}" alt="" class="venue-contact-banner__btn-icon"> Contact us
+            </a>
+        </div>
+    </div>
+</div>

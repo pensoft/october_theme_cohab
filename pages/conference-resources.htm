@@ -1,0 +1,42 @@
+title = "Resources"
+layout = "default"
+url = "/conference-resources"
+conference = true
+header_image = conference_resources.png
+
+[siteSearchInclude]
+
+[menu c_menu]
+start = "id-21"
+activeNode = 0
+listItemClasses = "item"
+primaryClasses = "nav nav-pills"
+secondaryClasses = "dropdown-menu"
+numberOfLevels = 1
+
+[jumbotron resources]
+jumbotron = "resources"
+background = "transperant"
+templates = "template3"
+description_limit = 0
+==
+{% component 'siteSearchInclude' %}
+
+<div class="container-fluid conference-menu-container">
+    <div class="container conference-menu" id="conference-menu">
+        {% component 'c_menu' %}
+    </div>
+</div>
+
+<div class="container conference-resources-container">
+    <div class="row">
+        <div class="col-md-6 col-xs-12">
+            <h1>Resources</h1>
+        </div>
+        <div class="col-md-6 col-xs-12">
+            {% component 'resources' %}
+        </div>
+    </div>
+</div>
+
+{% partial 'contact' %}

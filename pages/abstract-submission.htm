@@ -1,0 +1,32 @@
+url = "/abstract-submission"
+layout = "default"
+title = "Abstract submission"
+conference = 1
+header_image = "conference_abstract.png"
+
+[siteSearchInclude]
+
+[menu c_menu]
+start = "id-21"
+activeNode = 0
+listItemClasses = "item"
+primaryClasses = "nav nav-pills"
+secondaryClasses = "dropdown-menu"
+numberOfLevels = 1
+
+[jumbotron abstrakt]
+jumbotron = "abstract-submission"
+background = "transperant"
+templates = "template3"
+description_limit = 0
+==
+{% component 'siteSearchInclude' %}
+
+<div class="container-fluid conference-menu-container">
+    <div class="container conference-menu" id="conference-menu">
+        {% component 'c_menu' %}
+    </div>
+</div>
+{% component 'abstrakt' %}
+
+{% partial 'contact' %}

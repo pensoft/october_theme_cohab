@@ -54,18 +54,44 @@ numberOfLevels = 1
 <!-- Header -->
 {% if page_id != 'home' %}
     {% if this.theme.header_image %}
-        <div class="header-image {{page_id}}">
+        <div class="header-image {{page_id}} {% if this.page.conference %}conference{% endif %}">
             {%if this.page.header_image %}
             <div class="header-image-bar" style="background-image: url('{{this.page.header_image|media}}'); background-position: center;">
             {%else%}
             <div class="header-image-bar" style="background-image: url('{{this.theme.header_image.getPath()}}'); background-position: center;">
             {%endif%}
+                {% if this.page.conference %}
+                <div class="conference-header-overlay"></div>
+                <div class="container">
+                    <div class="jumbotron conference-jumbotron" data-aos="fade-up">
+                        <div class="conference-jumbotron-content">
+                            <h1 class="underline white">
+                                Third International Conference on Health and Biodiversity
+                            </h1>
+                            <p class="conference-subtitle">Partnerships for People and Planet</p>
+                            <div class="conference-meta">
+                <span class="conference-meta-item">
+                    <img src="{{ 'assets/images/icon_calendar.svg' | theme }}" alt="" class="conference-icon"> 14th to 18th September 2026
+                </span>
+                                <span class="conference-meta-divider"></span>
+                                <span class="conference-meta-item">
+                    <img src="{{ 'assets/images/icon_location.svg' | theme }}" alt="" class="conference-icon"> Galmont Hotel, Galway City, Ireland
+                </span>
+                            </div>
+                        </div>
+                        <img src="{{ 'assets/images/conference_symbol.svg' | theme }}" alt="" class="conference-symbol">
+                    </div>
+                </div>
+                {%else%}
                 <div class="container">
                     <div class="jumbotron" data-aos="fade-up">
                         <h1 class="underline white">
                             {%if page_title%} {{page_title}} {%else%} {{site_name}} {%endif%}</h1>
                     </div>
                 </div>
+                {%endif%}
+
+            </div> <!--close header-image-bar -->
         </div>
     {% endif %}
 {% endif %}

@@ -330,6 +330,81 @@ $(document).ready(function() {
 
     });
 
+
+    // Conference tabs
+    $('.conference-tabs-nav__item').on('click', function(e) {
+        e.preventDefault();
+        var target = $(this).data('target');
+
+        $('.conference-tabs-nav__item').removeClass('active');
+        $('.conference-tabs-content__panel').removeClass('active');
+
+        $(this).addClass('active');
+        $(target).addClass('active');
+    });
+
+    // Registration panels
+    $('.registration-list__item').on('click', function() {
+        var panel = $(this).data('panel');
+
+        $('.registration-list__item').removeClass('active');
+        $(this).addClass('active');
+
+        $('.registration-panel').removeClass('active');
+        $('#panel-' + panel).addClass('active');
+        $('.registration-panel-overlay').addClass('active');
+
+        $('body').css('overflow', 'hidden');
+    });
+
+    $('.registration-panel__close, .registration-panel-overlay').on('click', function() {
+        $('.registration-panel').removeClass('active');
+        $('.registration-panel-overlay').removeClass('active');
+        $('.registration-list__item').removeClass('active');
+        $('body').css('overflow', '');
+    });
+
+    // Registration pricing tabs with slide effect
+    (function() {
+        var $tabs = $('.registration-pricing__tabs');
+        if (!$tabs.length) return;
+
+        // Create slider element
+        var $slider = $('<span class="registration-pricing__slider"></span>');
+        $tabs.prepend($slider);
+
+        function moveSlider($activeTab) {
+            if (!$activeTab.length) return;
+            var left = $activeTab.position().left;
+            var width = $activeTab.outerWidth();
+            $slider.css({
+                width: width + 'px',
+                transform: 'translateX(' + (left - 4) + 'px)'
+            });
+        }
+
+        // Position slider on the initially active tab
+        moveSlider($tabs.find('.registration-pricing__tab.active'));
+
+        $('.registration-pricing__tab').on('click', function() {
+            var $this = $(this);
+            var rate = $this.data('rate');
+
+            $('.registration-pricing__tab').removeClass('active');
+            $this.addClass('active');
+
+            moveSlider($this);
+
+            $('.registration-pricing__card-price').each(function() {
+                $(this).text($(this).data(rate));
+            });
+
+            $('.registration-pricing__card-note').each(function() {
+                $(this).text($(this).data(rate));
+            });
+        });
+    })();
+
 });
 
 
