@@ -284,105 +284,118 @@ ul.pagination{
             z-index: 1;
         }
 
+        .container-jumbotron-conference{
+            width: calc(~'100vw - 160px');
+            max-width: 1440px;
+            height: 201px;
+            margin: 0 auto;
+
+            img{
+                border-radius: 0;
+            }
+
+            .conference-jumbotron{
+                display: flex;
+                align-items: flex-end;
+                justify-content: space-between;
+                height: 100%;
+                padding-bottom: 0;
+                position: relative;
+
+                .conference-jumbotron-content{
+                    width: 797px;
+                    max-width: 100%;
+                }
+
+                h1.underline{
+                    color: #FFF;
+                    font-family: Roboto;
+                    font-size: 48px;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: 57px; /* 118.75% */
+                    text-transform: unset;
+                    margin-bottom: 11px;
+
+                    .breakpoint-large-down({
+                        font-size: 33px;
+                        line-height: 38px;
+                    });
+                }
+
+                .conference-subtitle{
+                    color: #fff;
+                    font-family: Roboto;
+                    font-size: 18px;
+                    font-weight: 400;
+                    line-height: 1.4;
+                    margin-bottom: 16px;
+                    opacity: 0.9;
+                }
+
+                .conference-meta{
+                    display: flex;
+                    align-items: center;
+                    gap: 16px;
+                    color: #fff;
+                    font-family: Roboto;
+                    font-size: 14px;
+                    font-weight: 400;
+                    opacity: 0.85;
+
+                    .conference-meta-item{
+                        display: flex;
+                        align-items: center;
+                        gap: 6px;
+                    }
+
+                    .conference-icon{
+                        width: 18px;
+                        height: 18px;
+                        flex-shrink: 0;
+                    }
+
+                    .conference-meta-divider{
+                        width: 1px;
+                        height: 16px;
+                        background-color: rgba(255, 255, 255, 0.5);
+                    }
+
+                    .breakpoint-large-down({
+                        flex-direction: column;
+                        align-items: flex-start;
+                        gap: 8px;
+
+                        .conference-meta-divider{
+                            display: none;
+                        }
+                    });
+                }
+
+                .conference-symbol{
+                    width: 146.627px;
+                    height: 128.073px;
+                    object-fit: contain;
+                    opacity: 0.85;
+                    align-self: center;
+                    flex-shrink: 0;
+
+                    .breakpoint-large-down({
+                        width: 80px;
+                        position: absolute;
+                        right: 0;
+                        top: 16px;
+                    });
+                }
+            }
+        }
+
         .container{
             position: relative;
             z-index: 2;
         }
 
-        .conference-jumbotron{
-            display: flex;
-            align-items: flex-end;
-            justify-content: space-between;
-            height: 100%;
-            padding-bottom: 24px;
-            position: relative;
 
-            .conference-jumbotron-content{
-                flex: 1;
-            }
-
-            h1.underline{
-                color: #FFF;
-                font-family: Roboto;
-                font-size: 48px;
-                font-style: normal;
-                font-weight: 500;
-                line-height: 57px; /* 118.75% */
-                text-transform: unset;
-                margin-bottom: 11px;
-
-                .breakpoint-large-down({
-                    font-size: 33px;
-                    line-height: 38px;
-                });
-            }
-
-            .conference-subtitle{
-                color: #fff;
-                font-family: Roboto;
-                font-size: 18px;
-                font-weight: 400;
-                line-height: 1.4;
-                margin-bottom: 16px;
-                opacity: 0.9;
-            }
-
-            .conference-meta{
-                display: flex;
-                align-items: center;
-                gap: 16px;
-                color: #fff;
-                font-family: Roboto;
-                font-size: 14px;
-                font-weight: 400;
-                opacity: 0.85;
-
-                .conference-meta-item{
-                    display: flex;
-                    align-items: center;
-                    gap: 6px;
-                }
-
-                .conference-icon{
-                    width: 18px;
-                    height: 18px;
-                    flex-shrink: 0;
-                }
-
-                .conference-meta-divider{
-                    width: 1px;
-                    height: 16px;
-                    background-color: rgba(255, 255, 255, 0.5);
-                }
-
-                .breakpoint-large-down({
-                    flex-direction: column;
-                    align-items: flex-start;
-                    gap: 8px;
-
-                    .conference-meta-divider{
-                        display: none;
-                    }
-                });
-            }
-
-            .conference-symbol{
-                max-width: 24%;
-                object-fit: contain;
-                height: 100%;
-                opacity: 0.85;
-                align-self: center;
-                flex-shrink: 0;
-                margin-left: 32px;
-
-                .breakpoint-large-down({
-                    width: 80px;
-                    position: absolute;
-                    right: 0;
-                    top: 16px;
-                });
-            }
-        }
     }
 
 
@@ -1201,7 +1214,7 @@ footer .align-items-center{
 .container800{
     width: 815px;
     max-width: 90%;
-    margin: 50px auto;
+    margin: 0px auto;
 }
 
 .container:has(.go_back){
