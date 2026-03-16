@@ -331,18 +331,30 @@ $(document).ready(function() {
     });
 
 
-    // Conference tabs
-    $('.conference-tabs-nav__item').on('click', function(e) {
-        e.preventDefault();
-        var target = $(this).data('target');
+    // Conference tabs - scoped per wrapper
+    $('.conference-tabs-wrapper').each(function() {
+        var $wrapper = $(this);
+        var $navItems = $wrapper.find('.conference-tabs-nav__item');
+        var $panels = $wrapper.find('.conference-tabs-content__panel');
 
-        $('.conference-tabs-nav__item').removeClass('active');
-        $('.conference-tabs-content__panel').removeClass('active');
+        // Set first item active by default if none is active
+        if ($navItems.filter('.active').length === 0) {
+            $navItems.first().addClass('active');
+            $panels.first().addClass('active');
+        }
 
-        $(this).addClass('active');
-        $(target).addClass('active');
+        $navItems.on('click', function(e) {
+            e.preventDefault();
+            var target = $(this).data('target');
+
+            $navItems.removeClass('active');
+            $panels.removeClass('active');
+
+            $(this).addClass('active');
+            $wrapper.find(target).addClass('active');
+        });
     });
-
+    
     // Registration panels
     $('.registration-list__item').on('click', function() {
         var panel = $(this).data('panel');
