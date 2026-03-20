@@ -200,6 +200,30 @@
                 }
                 background-color: inherit;
 
+
+                &:nth-of-type(5), &:nth-of-type(6){
+                    a{
+                        border-radius: 10px;
+                        background: #6E94CD;
+                        display: flex;
+                        width: 220px;
+                        height: 50px;
+                        justify-content: center;
+                        align-items: center;
+                        color: #FFF;
+                        text-align: center;
+                        font-family: Roboto;
+                        font-weight: 400 !important;
+                        font-size: 16px;
+                        font-style: normal;
+                        line-height: normal;
+                        padding: 0 10px;
+                        &:hover{
+                            opacity: 0.7;
+                        }
+                    }
+                }
+
                 .breakpoint-large-down({
                     display: none;
                 });
@@ -634,7 +658,7 @@
         background: @white-color;
     }
 
-    #menu, #menu *{
+    #menu{
         visibility: hidden;
     }
 
@@ -667,7 +691,29 @@
         width: 100%;
         .breakpoint-large-down({
             padding: 18px  0 0 0;
-        })
+        });
+        &:nth-of-type(6){
+            a{
+                border-radius: 10px;
+                background: #6E94CD;
+                display: flex;
+                width: 220px;
+                height: unset;
+                justify-content: center;
+                align-items: center;
+                color: #FFF;
+                text-align: center;
+                font-family: Roboto;
+                font-weight: 400 !important;
+                font-size: 16px;
+                font-style: normal;
+                line-height: normal;
+                padding: 0 10px;
+                &:hover{
+                    opacity: 0.7;
+                }
+            }
+        }
     }
 
     #menu li a{
