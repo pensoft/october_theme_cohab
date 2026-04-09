@@ -12,12 +12,10 @@ templates = "template3"
 description_limit = 0
 ==
 <?php
-
 function onStart(){
     use Pensoft\Accordions\Models\Item;
     $this['records'] = Item::where('category_id', 2)->get();
 }
-
 ?>
 ==
 {% component 'siteSearchInclude' %}
