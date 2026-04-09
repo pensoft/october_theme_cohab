@@ -355,6 +355,27 @@ $(document).ready(function() {
         });
     });
     
+    // Agenda panels
+    $('ul.agenda_list li').on('click', function() {
+        var panelId = $(this).attr('class').replace('agenda_list--', '');
+
+        $('ul.agenda_list li').removeClass('active');
+        $(this).addClass('active');
+
+        $('.agenda-panel').removeClass('active');
+        $('#agenda-panel-' + panelId).addClass('active');
+        $('.agenda-panel-overlay').addClass('active');
+
+        $('body').css('overflow', 'hidden');
+    });
+
+    $('.agenda-panel__close, .agenda-panel-overlay').on('click', function() {
+        $('.agenda-panel').removeClass('active');
+        $('.agenda-panel-overlay').removeClass('active');
+        $('ul.agenda_list li').removeClass('active');
+        $('body').css('overflow', '');
+    });
+
     // Registration panels
     $('.registration-list__item').on('click', function() {
         var panel = $(this).data('panel');
