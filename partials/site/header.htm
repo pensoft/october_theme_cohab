@@ -62,7 +62,7 @@ numberOfLevels = 1
                 {% set headerBg = this.theme.header_image.getPath() %}
             {% endif %}
             {% if this.page.conference %}
-            <div class="header-image-bar" style="background: linear-gradient(180deg, rgba(63, 71, 86, 0.00) 7.28%, #3F4756 100%), url('{{ headerBg }}') center / cover no-repeat lightgray;">
+            <div class="header-image-bar" style="background: linear-gradient(180deg, rgba(63, 71, 86, 0.00) 7.28%, #3F4756 100%), url('{{ headerBg }}') center top / cover no-repeat lightgray;">
             {% else %}
             <div class="header-image-bar" style="background-image: url('{{ headerBg }}'); background-position: center top;">
             {% endif %}
