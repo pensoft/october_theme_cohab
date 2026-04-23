@@ -57,9 +57,9 @@ numberOfLevels = 1
     {% if this.theme.header_image %}
         <div class="header-image {{page_id}} {% if this.page.conference %}conference{% endif %}">
             {%if this.page.header_image %}
-            <div class="header-image-bar" style="background-image: url('{{this.page.header_image|media}}'); background-position: center;">
+            <div class="header-image-bar" style="background-image: url('{{this.page.header_image|media}}'); background-position: center top;">
             {%else%}
-            <div class="header-image-bar" style="background-image: url('{{this.theme.header_image.getPath()}}'); background-position: center;">
+            <div class="header-image-bar" style="background-image: url('{{this.theme.header_image.getPath()}}'); background-position: center top;">
             {%endif%}
                 {% if this.page.conference %}
 <!--                <div class="conference-header-overlay"></div>-->
