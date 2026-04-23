@@ -56,12 +56,17 @@ numberOfLevels = 1
 {% if page_id != 'home' %}
     {% if this.theme.header_image %}
         <div class="header-image {{page_id}} {% if this.page.conference %}conference{% endif %}">
-            {%if this.page.header_image %}
-            <div class="header-image-bar" style="background-image: url('{{this.page.header_image|media}}'); background-position: center top;">
-            {%else%}
-            <div class="header-image-bar" style="background-image: url('{{this.theme.header_image.getPath()}}'); background-position: center top;">
-            {%endif%}
-                {% if this.page.conference %}
+            {% if this.page.header_image %}
+                {% set headerBg = this.page.header_image|media %}
+            {% else %}
+                {% set headerBg = this.theme.header_image.getPath() %}
+            {% endif %}
+            {% if this.page.conference %}
+            <div class="header-image-bar" style="background: linear-gradient(180deg, rgba(63, 71, 86, 0.00) 7.28%, #3F4756 100%), url('{{ headerBg }}') center / cover no-repeat lightgray;">
+            {% else %}
+            <div class="header-image-bar" style="background-image: url('{{ headerBg }}'); background-position: center top;">
+            {% endif %}
+            {% if this.page.conference %}
 <!--                <div class="conference-header-overlay"></div>-->
                 <div class="container-jumbotron-conference">
                     <div class="jumbotron conference-jumbotron" data-aos="fade-up">
